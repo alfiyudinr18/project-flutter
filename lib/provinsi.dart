@@ -33,7 +33,11 @@ class Provinsi extends StatelessWidget {
               Center(
                   child: Text(
                 'Data Kasus Provinsi',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Cagliostro',
+                ),
               )),
               Padding(
                 padding: EdgeInsets.all(6.0),

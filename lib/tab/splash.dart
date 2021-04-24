@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'tabbar.dart';
+import 'bottom.dart';
 
 class SplashScreen extends StatefulWidget {
   _SplashScreen createState() => _SplashScreen();
@@ -15,7 +15,7 @@ class _SplashScreen extends State<SplashScreen> {
   }
 
   splashscreenStart() async {
-    var duration = const Duration(seconds: 2);
+    var duration = const Duration(seconds: 3);
     return Timer(duration, () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) {
@@ -47,6 +47,7 @@ class _SplashScreen extends State<SplashScreen> {
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 25.0,
+                fontFamily: 'Acme',
               ),
             ),
           ],

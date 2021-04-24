@@ -48,6 +48,7 @@ class Lokal extends StatelessWidget {
                                           fontSize: 28.0,
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold,
+                                          fontFamily: 'Cagliostro',
                                           shadows: [
                                             Shadow(
                                               color: Colors.black,
@@ -72,9 +73,11 @@ class Lokal extends StatelessWidget {
                                 child: Text(
                                   'Kasus Indonesia',
                                   style: new TextStyle(
-                                      fontSize: 28.0,
-                                      color: Colors.black45,
-                                      fontWeight: FontWeight.bold),
+                                    fontSize: 28.0,
+                                    color: Colors.black45,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Cagliostro',
+                                  ),
                                 ),
                               ),
                             ),

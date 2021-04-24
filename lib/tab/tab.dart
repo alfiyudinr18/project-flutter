@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:covid/provinsi.dart' as provinsi;
 import 'package:covid/negara.dart' as negara;
 
-class Home extends StatefulWidget {
+class Option extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
+class _HomeState extends State<Option> with SingleTickerProviderStateMixin {
   TabController controller;
 
   @override

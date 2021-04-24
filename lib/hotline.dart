@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Hotline extends StatelessWidget {
+  final String telephoneKesehatan = "021-5210-411";
+  final String telephoneJakarta = "112";
+  final String telephoneJateng = "024-358-0713";
+  final String telephoneJabar = "119";
+  final String telephoneJatim = "031-843-0313";
+  final String telephoneYogyakarta = "0274-555-585";
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -13,13 +21,16 @@ class Hotline extends StatelessWidget {
                 Text(
                   'Hotline',
                   style: new TextStyle(
-                      fontSize: 30.0,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold),
+                    fontSize: 30.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Acme',
+                  ),
                 ),
                 Text(''),
                 Text(
-                  'Layanan darurat via telepon yang disediakan oleh Kemkes dan juga Pemprov-Pemprov wilayah Indonesia.',
+                  'Layanan darurat via telepon yang disediakan oleh Kementrian Kesehatan dan juga Pemprov-Pemprov wilayah Indonesia.',
+                  style: TextStyle(letterSpacing: 2, wordSpacing: 2),
                 ),
               ],
             ),
@@ -54,9 +65,17 @@ class Hotline extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
                       Text(''),
-                      Text(
-                        '021-5210-411',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      InkWell(
+                        onTap: _kesehatan,
+                        child: Text(
+                          '021-5210-411',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
+                            fontSize: 16.0,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
                       ),
                       Text(''),
                       Text(
@@ -94,9 +113,17 @@ class Hotline extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
                       Text(''),
-                      Text(
-                        '112',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      InkWell(
+                        onTap: _jakarta,
+                        child: Text(
+                          '112',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
+                            fontSize: 16.0,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
                       ),
                       Text(''),
                       Text(
@@ -141,9 +168,17 @@ class Hotline extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
                       Text(''),
-                      Text(
-                        '024-358-0713',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      InkWell(
+                        onTap: _jateng,
+                        child: Text(
+                          '024-358-0713',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
+                            fontSize: 16.0,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
                       ),
                       Text(''),
                       Text(
@@ -181,9 +216,17 @@ class Hotline extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
                       Text(''),
-                      Text(
-                        '119',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      InkWell(
+                        onTap: _jabar,
+                        child: Text(
+                          '119',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
+                            fontSize: 16.0,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
                       ),
                       Text(''),
                       Text(
@@ -226,9 +269,17 @@ class Hotline extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
                       Text(''),
-                      Text(
-                        '031-843-0313',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      InkWell(
+                        onTap: _jatim,
+                        child: Text(
+                          '031-843-0313',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
+                            fontSize: 16.0,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
                       ),
                       Text(''),
                       Text(
@@ -266,9 +317,17 @@ class Hotline extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
                       Text(''),
-                      Text(
-                        '0274-555-585',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      InkWell(
+                        onTap: _yogyakarta,
+                        child: Text(
+                          '0274-555-585',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
+                            fontSize: 16.0,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
                       ),
                       Text(''),
                       Text(
@@ -284,5 +343,65 @@ class Hotline extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  _kesehatan() async {
+    String telephoneUrl = "tel:$telephoneKesehatan";
+
+    if (await canLaunch(telephoneUrl)) {
+      await launch(telephoneUrl);
+    } else {
+      throw "Can't phone that number.";
+    }
+  }
+
+  _jakarta() async {
+    String telephoneUrl = "tel:$telephoneJakarta";
+
+    if (await canLaunch(telephoneUrl)) {
+      await launch(telephoneUrl);
+    } else {
+      throw "Can't phone that number.";
+    }
+  }
+
+  _jateng() async {
+    String telephoneUrl = "tel:$telephoneJateng";
+
+    if (await canLaunch(telephoneUrl)) {
+      await launch(telephoneUrl);
+    } else {
+      throw "Can't phone that number.";
+    }
+  }
+
+  _jabar() async {
+    String telephoneUrl = "tel:$telephoneJabar";
+
+    if (await canLaunch(telephoneUrl)) {
+      await launch(telephoneUrl);
+    } else {
+      throw "Can't phone that number.";
+    }
+  }
+
+  _jatim() async {
+    String telephoneUrl = "tel:$telephoneJatim";
+
+    if (await canLaunch(telephoneUrl)) {
+      await launch(telephoneUrl);
+    } else {
+      throw "Can't phone that number.";
+    }
+  }
+
+  _yogyakarta() async {
+    String telephoneUrl = "tel:$telephoneYogyakarta";
+
+    if (await canLaunch(telephoneUrl)) {
+      await launch(telephoneUrl);
+    } else {
+      throw "Can't phone that number.";
+    }
   }
 }

@@ -30,7 +30,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         controller: controller,
         children: <Widget>[
           new lokal.Lokal(),
-          new tab.Home(),
+          new tab.Option(),
           new hotline.Hotline(),
         ],
       ),
